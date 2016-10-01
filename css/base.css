@@ -1,5 +1,57 @@
 
-*FONTS*/
+/* GRID */
+
+.site-wrap {
+  height: 100%;
+  width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  padding: 1rem 3.5rem;
+  overflow: ;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="mobile-col"],  [class*="desktop-col"]{
+    float: left;
+    padding: 0 15px;
+}
+@media (max-width: 768px) {
+	.mobile-col-1 {width: 8.33%;}
+	.mobile-col-2 {width: 16.66%;}
+	.mobile-col-3 {width: 25%;}
+	.mobile-col-4 {width: 33.33%;}
+	.mobile-col-5 {width: 41.66%;}
+	.mobile-col-6 {width: 50%;}
+	.mobile-col-7 {width: 58.33%;}
+	.mobile-col-8 {width: 66.66%;}
+	.mobile-col-9 {width: 75%;}
+	.mobile-col-10 {width: 83.33%;}
+	.mobile-col-11 {width: 91.66%;}
+	.mobile-col-12 {width: 100%;}
+}
+
+@media (min-width: 769px) {
+	.desktop-col-1 {width: 8.33%;}
+	.desktop-col-2 {width: 16.66%;}
+	.desktop-col-3 {width: 25%;}
+	.desktop-col-4 {width: 33.33%;}
+	.desktop-col-5 {width: 41.66%;}
+	.desktop-col-6 {width: 50%;}
+	.desktop-col-7 {width: 58.33%;}
+	.desktop-col-8 {width: 66.66%;}
+	.desktop-col-9 {width: 75%;}
+	.desktop-col-10 {width: 83.33%;}
+	.desktop-col-11 {width: 91.66%;}
+	.desktop-col-12 {width: 100%;}
+}
+/*FONTS*/
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poiret+One);
 
@@ -64,6 +116,8 @@ nav a.active {
 body{
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1.5;
+	background: #FCFEFF;
+	overflow-x: hidden; /* Without this, the body has excess horizontal scroll when the menu is open */
 }
 
 h1, h2{
@@ -95,31 +149,33 @@ th{
 
 /* Navigation Menu - Background */
 .navigation {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  background: #111;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
 }
 
 /* Navigation Menu - List items */
 .nav-item {
-  /* non-critical appearance styles */
-  width: 200px;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #000;
+	-webkit-box-shadow: inset 14px 3px 0px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 14px 3px 0px -3px rgba(0,0,0,0.75);
+	box-shadow: inset 14px 3px 0px -3px rgba(0,0,0,0.75);
+}
+
+.nav-item-selected{
+	-webkit-box-shadow: inset 14px 3px 0px -3px rgb(255, 217, 0);
+	-moz-box-shadow: inset 14px 3px 0px -3px rgb(255, 217, 0);
+	box-shadow: inset 14px 3px 0px -3px rgb(255, 217, 0);
 }
 
 .nav-item a {
-  /* non-critical appearance styles */
   display: block;
   padding: 1em;
-  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  color: white;
+  color: #212121;
   text-decoration: none;
   transition: color 0.2s, background 0.5s;
 }
@@ -129,19 +185,7 @@ th{
   background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
 }
 
-/* Site Wrapper - Everything that isn't navigation */
-.site-wrap {
-  height: 100%;
-  width: calc(100% - 7rem);
-  background-color: white; /* Needs a background or else the nav will show through */
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  left: 0;
-  z-index: 1;
-  padding: 1rem 3.5rem;
-  overflow: ;
-}
+
 
 /* Nav Trigger */
 .nav-trigger {
@@ -164,13 +208,8 @@ label[for="nav-trigger"] {
 .nav-trigger:checked + label {
   left: 215px;
 }
-
+/* defines how the wrapped site looks when .nav-trigger:checked */
 .nav-trigger:checked ~ .site-wrap {
-  left: 200px;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+	left: 200px;
 }
 
-body {
-/* Without this, the body has excess horizontal scroll when the menu is open */
-  overflow-x: hidden;
-}
