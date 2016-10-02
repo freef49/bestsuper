@@ -113,7 +113,7 @@ ul{
 /*COLOURS*/
 
 h1, h2{
-	color:rgb(255, 217, 0);
+	color:#7F7D7D;
 }
 p, ul, li{
 	color: #555;
@@ -124,10 +124,6 @@ strong {
 hr{
 	border-top-color: #33cc33;
 }
-header {
-background-color: #444;
-}
-
 nav a:hover {
   background-color: #85e085;
 }
@@ -173,7 +169,33 @@ th{
 img{
 	max-width: 100%;
 }
-/* Nav menu */
+/* HEADER */
+
+.banner-header{
+	width: calc(100% - 7rem);
+	height: 30vh;
+	background-image: url('../images/banner-image.jpg');
+	margin: auto;
+	background-repeat: no-repeat;
+    background-position: center; 
+    margin-bottom: 3.5rem;
+    padding-top: 10vh;
+}
+
+.banner-header-text h1{
+	color: #7F7D7D;
+	text-align: center;
+
+}
+.banner-header-text{
+	box-shadow: 0px 0px 0px 12px rgb(255, 217, 0);
+    display: inherit;
+    margin: auto;
+    text-align: center;
+    width: 30vw;
+    background-color: white;
+}
+/* MOBILE NAVIGATION */
 
 /* Navigation Menu - Background */
 .navigation {
@@ -250,7 +272,7 @@ label[for="nav-trigger"] {
 }
 .content-box > div:hover h2{
 	transition: .5s color;
-	color: #7F7D7D;
+	color: rgb(255, 217, 0);
 }
 
 .content-box > div > img{
@@ -261,4 +283,25 @@ label[for="nav-trigger"] {
 
 .content-box > div > img:hover, .content-box > div > img:focus, .content-box > div:hover img, .content-box > div:focus img{
 	filter: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+	html{
+		font-size: 12px;
+	}
+	.banner-header{
+		height: 350px;
+		width: 100%;
+	}
+	.banner-header-text{
+		width: 100%;
+	}
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+	.site{
+		
+	}
 }
