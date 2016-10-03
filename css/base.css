@@ -45,14 +45,21 @@ ul{
   padding: 1rem 3.5rem;
   overflow: ;
 }
-.row::after {
+/* .row::after {
     content: "";
     clear: both;
     display: block;
+} */
+.row{
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: FLEX-START;
 }
 [class*="mobile-col"],  [class*="desktop-col"], [class*="tablet-col"]{
-    float: left;
     padding: 0 15px;
+    align-self: flex-end;
 }
 @media (max-width: 768px) {
 	.mobile-col-1 {width: 8.33%;}
@@ -369,12 +376,14 @@ label[for="nav-trigger"] {
 	filter: none;
 }
 
+/* MEMBER STORY IMAGES */
 #member-stories-jessica{
 	background-image: url("../images/member-stories-jessica.jpg");
 }
 #member-stories-james{
 	background-image: url("../images/member-stories-james.jpg");
 }
+
 /* DESKTOP NAVIGATION */
 nav{
 	display: flex;
