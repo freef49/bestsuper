@@ -266,6 +266,10 @@ img{
 .join-banner{
 	background-image: url('../images/join-banner.jpg');
 }
+.subscribe-banner{
+	background-image: url('../images/subscribe-banner.jpg');
+}
+
 .banner-header-text h1{
 	color: #7F7D7D;
 	text-align: center;
@@ -449,6 +453,10 @@ label[for="nav-trigger"] {
 #join-side{
 	background-image: url('../images/join-side.jpg');
 }
+#subscribe-side{
+	background-image: url('../images/subscribe-side.jpg');
+}
+
 /* DESKTOP NAVIGATION */
 nav{
 	display: flex;
@@ -620,6 +628,9 @@ figcaption{
 .flex-inner {
   justify-content: space-between;
 }
+
+/* subscribe page */
+
 
 /* Mobile styles */
 @media (max-width: 768px) {
